@@ -9,6 +9,8 @@ let h2 = document.querySelector("h2");
 
 let gameStarted = false ;
 
+let buttons = document.querySelectorAll(".button");
+
 document.body.addEventListener("keypress",()=>{
     if(gameStarted == false){
         console.log("game is started");
@@ -35,4 +37,12 @@ function levelUp(){
     let randomButton = document.querySelector(`.${randomColor}`);
     console.log(randomButton);
     buttonFlash(randomButton);
+}
+
+function buttonPress(){
+    console.log(this);
+}
+
+for(let b of buttons){
+    b.addEventListener("click",buttonPress);
 }
